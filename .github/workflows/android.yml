@@ -70,11 +70,11 @@ jobs:
         name: app
         path: app/build/outputs/apk/debug
     - name: action-slack
-      uses: 8398a7/action-slack@v3.8.2
+      uses: 8398a7/action-slack@v2
       with:
         status: custom
         fields: workflow,job,commit.repo,ref,author,took
-        custom_payload: |
+        payload: |
           {
             username: 'aware-slack-bot'
             icon_emoji: ':octocat:',
@@ -84,5 +84,5 @@ jobs:
             }]
           }
         env:
-          SLACK_WEBHOOK_URL: ${{ secrets.SLACK_WEBHOOK_URL }} # required
-          if: always() # Pick up events even if the job fails or is canceled.
+          SLACK_WEBHOOK_URL: ${{ secrets.SLACK_WEBHOOK_URL }}
+          if: always()
