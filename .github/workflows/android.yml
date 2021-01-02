@@ -68,8 +68,7 @@ jobs:
       uses: actions/upload-artifact@v2
       with:
         name: app
-        path: app/build/outputs/apk/debug          
-       
+        path: app/build/outputs/apk/debug
      - name: action-slack
        uses: 8398a7/action-slack@v3.8.2
        with:
@@ -87,4 +86,3 @@ jobs:
        env:
          SLACK_WEBHOOK_URL: ${{ secrets.SLACK_WEBHOOK_URL }} # required
          if: always() # Pick up events even if the job fails or is canceled.
-       
