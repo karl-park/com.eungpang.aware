@@ -97,7 +97,7 @@ class TimeCheckService : Service() {
             _processInfoMap[newAppInfo.name] = _processInfoMap[newAppInfo.name]!!.copy(first = newAppInfo)
 
             TimeCheckerNotification.updateNotification(newAppInfo)
-        }, 0, 2, TimeUnit.SECONDS)
+        }, 0, 1_000, TimeUnit.MILLISECONDS)
 
         _processInfoMap[appInfo.name] = Pair(appInfo, scheduledFuture)
 
