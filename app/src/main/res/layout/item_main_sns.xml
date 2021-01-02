@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+        <variable
+            name="item"
+            type="com.eungpang.applocker.domain.item.Item" />
+
+        <variable
+            name="handler"
+            type="com.eungpang.applocker.presentation.main.ItemHandler" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:padding="@dimen/padding_medium"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <androidx.appcompat.widget.AppCompatImageView
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintLeft_toLeftOf="parent"
+            android:src="@drawable/ic_launcher_hourglass_foreground"
+            android:id="@+id/iv_item_logo"
+            android:layout_width="@dimen/image_size_small"
+            android:layout_height="@dimen/image_size_small" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintLeft_toRightOf="@id/iv_item_logo"
+            android:layout_marginLeft="@dimen/margin_small"
+            tools:text="Facebook"
+            android:text="@{item.name}"
+            android:id="@+id/tv_item_text"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:text="@string/btn_launch_sns_text"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            android:onClick="@{() -> handler.onClick(item)}"
+            android:id="@+id/btn_item_launch"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

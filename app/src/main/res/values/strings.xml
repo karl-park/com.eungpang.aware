@@ -1,0 +1,8 @@
+<resources>
+    <string name="app_name">Aware</string>
+    <string name="copyright">Copyright © 2020 EungPang. All rights reserved.</string>
+
+
+    <!-- Main Activity -->
+    <string name="btn_launch_sns_text">Launch</string>
+</resources>
