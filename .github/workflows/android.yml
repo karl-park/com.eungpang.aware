@@ -49,9 +49,9 @@ jobs:
       run: ./gradlew assembleDebug --stacktrace
     - name: Upload APK
       uses: actions/upload-artifact@v1
-        with:
-          name: app
-          path: app/build/outputs/apk/debug
+      with:
+        name: app
+        path: app/build/outputs/apk/debug
   delivery-debug:
     name: Upload & Run Delivery To Slack
     runs-on: ubuntu-latest
